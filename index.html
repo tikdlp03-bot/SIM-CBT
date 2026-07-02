@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulasi UTBK SNBT 2026</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ========== KONTENER UTAMA ========== -->
+    <div class="exam-container" id="app">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="logo">SIM<span>UTBK</span></div>
+                <div class="badge-subtest" id="subtestBadge">📘 Penalaran Matematika</div>
+            </div>
+            <div class="header-right">
+                <div class="info-peserta">
+                    👤 <strong id="namaPeserta">Andika Pratama</strong>
+                </div>
+                <div class="timer-box" id="timerBox">
+                    <span class="icon">⏱️</span>
+                    <span id="timerDisplay">20:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BADGE SOAL & NAV -->
+        <div class="soal-badge">
+            <div class="subtest-title">
+                Soal <span id="currentSoalDisplay">1</span> dari <span id="totalSoalDisplay">10</span>
+                <small>• Pilih salah satu jawaban</small>
+            </div>
+            <div class="nav-counter">
+                <button class="btn-nav" id="prevBtn" disabled>◀ Sebelumnya</button>
+                <span id="posIndicator">1 / 10</span>
+                <button class="btn-nav" id="nextBtn">Selanjutnya ▶</button>
+            </div>
+        </div>
+
+        <!-- AREA SOAL -->
+        <div class="soal-area" id="soalArea">
+            <!-- akan diisi oleh JavaScript -->
+        </div>
+
+        <!-- FOOTER TOMBOL -->
+        <div class="soal-footer">
+            <div class="btn-group">
+                <button class="btn btn-secondary" id="raguBtn">❓ Ragu-ragu</button>
+                <button class="btn btn-outline" id="clearBtn">↺ Kosongkan</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-success" id="submitBtn">✅ Selesai & Kirim</button>
+            </div>
+        </div>
+
+        <!-- NAVIGATOR NOMOR SOAL -->
+        <div class="navigator">
+            <span class="label">📌 Navigasi Soal</span>
+            <div class="nomor-grid" id="nomorGrid">
+                <!-- diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MODAL HASIL ========== -->
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal-box">
+            <div class="icon-big">🎯</div>
+            <h2>Simulasi Selesai!</h2>
+            <p class="sub">Berikut rangkuman jawaban Anda.</p>
+            <div class="score" id="finalScore">0</div>
+            <div class="score-label">dari <span id="finalTotal">10</span> soal benar</div>
+            <div style="margin: 20px 0 10px; text-align: left;">
+                <div class="detail-row">
+                    <span>✅ Benar</span>
+                    <span id="summaryBenar">0</span>
+                </div>
+                <div class="detail-row">
+                    <span>❌ Salah</span>
+                    <span id="summarySalah">0</span>
+                </div>
+                <div class="detail-row">
+                    <span>❓ Ragu-ragu</span>
+                    <span id="summaryRagu">0</span>
+                </div>
+                <div class="detail-row">
+                    <span>⬜ Tidak dijawab</span>
+                    <span id="summaryKosong">0</span>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-close-modal" id="closeModalBtn">🔄 Ulangi Simulasi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
